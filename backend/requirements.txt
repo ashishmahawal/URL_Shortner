@@ -1,0 +1,4 @@
+fastapi
+uvicorn[standard]
+snowflake-id
+psycopg[binary]
