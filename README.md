@@ -4,6 +4,7 @@
  - Postgres SQL
     ```
     brew install postgresql
+    brew services start postgresql
 
     1. CREATE ROLE testUser WITH LOGIN PASSWORD 'password';
 
@@ -21,6 +22,29 @@
     long_url VARCHAR(1024) NOT NULL
     );
     ```
+
+### How to run application on local ?
+#### Backend
+```
+cd backend
+python3 -m venv .env
+source .env/bin/activate
+pip3 install -r requirements.txt
+
+uvicorn --reload app:app
+```
+
+Backend will be accessible at http://localhost:8000
+
+OpenAPI docs at http://localhost:8000/docs
+
+#### Frontend
+
+```
+cd frontend
+npm run dev
+```
+App will be accessible at http://localhost:3000
 
 ### Frontend will look like this...
 
