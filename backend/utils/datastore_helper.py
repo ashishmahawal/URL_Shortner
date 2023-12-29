@@ -48,7 +48,7 @@ class SqlDB(Datastore):
     def getData(self,short_url):
         connection,cursor = self.connectToDb()
         response = None
-        short_url = f"http://squeezer/{short_url}"
+        short_url = f"http://localhost:8000/v1/shorten/{short_url}"
         try:
             #query = f"SELECT * FROM {self.table_name};"
             cursor.execute("SELECT * FROM url_mapping WHERE short_url = %s;", (short_url,))
